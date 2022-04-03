@@ -1,0 +1,16 @@
+{
+  "name": "js02_tip-calculator-app-main",
+  "version": "1.0.0",
+  "description": "![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --host=localhost --port=6002",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "DainiusMI",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
