@@ -24,35 +24,53 @@
     line-height: 2.8rem;
     border-radius: .3rem;
 }
+@mixin mobile {
+    @media (max-width: 800px) {
+        @content;
+    }
+    
+}
 
 
 body * {
     font-family: 'Overpass', sans-serif;
-    font-size: 24px;
+ 
     /*  font-weight: map-get($font-weights, bold ); */
     font-weight: weight(bold);
 }
 body {
+    height: 95vh;
     width: 100%;
-    @include flexCol(center, center);
+    @include flexCol(center, space-between);
     background-color: $light-grayish-cyan;
 }
 
 .main-container {
+    font-size: 24px;
     width: 60%;
     @include flexRow(center, center);
     gap: 2rem;
     background-color: white;
     border-radius: 1rem;
     padding: 2rem;
-    input,  .button {
-        cursor: pointer;
+    @include mobile {
+        flex-direction: column;
+        width: 90%;
     }
+    
+
+
 }
 .info-container {
     @include flexCol(flex-start, center);
     width: 50%;
     gap: 2rem;
+    @include mobile {
+        width: 100%;
+    }
+        input,  .button {
+            cursor: pointer;
+        }
         .row {
             @include flexCol(flex-start, center);
             width: 100%;
@@ -138,6 +156,9 @@ body {
     padding: 2rem;
     border-radius: .5rem;
     background-color: $very-dark-cyan;
+    @include mobile {
+        width: 100%;
+    }
     .calc-area {
         display: flex;
         flex-direction: column;
@@ -178,7 +199,10 @@ body {
             background-color: $light-grayish-cyan;
         }
     }
+    .attribution { font-size: 11px ; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
 }
+
 
 
 
