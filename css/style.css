@@ -8,12 +8,12 @@
 
 body * {
   font-family: 'Overpass', sans-serif;
-  font-size: 24px;
   /*  font-weight: map-get($font-weights, bold ); */
   font-weight: 700;
 }
 
 body {
+  height: 95vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -25,13 +25,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #c5e4e7;
 }
 
 .main-container {
+  font-size: 24px;
   width: 60%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,8 +53,14 @@ body {
   padding: 2rem;
 }
 
-.main-container input, .main-container .button {
-  cursor: pointer;
+@media (max-width: 800px) {
+  .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 90%;
+  }
 }
 
 .info-container {
@@ -72,6 +79,16 @@ body {
           justify-content: center;
   width: 50%;
   gap: 2rem;
+}
+
+@media (max-width: 800px) {
+  .info-container {
+    width: 100%;
+  }
+}
+
+.info-container input, .info-container .button {
+  cursor: pointer;
 }
 
 .info-container .row {
@@ -225,6 +242,12 @@ body {
   background-color: #00494d;
 }
 
+@media (max-width: 800px) {
+  .calc-container {
+    width: 100%;
+  }
+}
+
 .calc-container .calc-area {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -302,5 +325,14 @@ body {
 
 .calc-container .reset-button:hover {
   background-color: #c5e4e7;
+}
+
+.calc-container .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.calc-container .attribution a {
+  color: #3e52a3;
 }
 /*# sourceMappingURL=style.css.map */

@@ -12,34 +12,29 @@
 
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  <div class="main-container">
+  <div class="empty"></div>
+  <div class="main-container" id="main-container">
 
     <div class="info-container">
         <div class="row">
           <h3> Bill </h3>
           <div class="input-row">
             <img class="input-logo" src="./images/icon-dollar.svg" alt="">
-          <input onkeyup="getBill()" id="bill" type="text" value="0" onfocus="this.value=''">
+          <input onkeyup="runUpdate()" id="bill" type="text" value="0" onfocus="this.value=''">
           </div>
         </div>
         <div class="row">
           <h3> Select Tip % </h3>
           <div id="tip-percent-list" class="grid-tips">
 
-            <button onclick="getTip(0)" class="tip tip-button button" value=5 >  5&percnt;  </button>
-            <button onclick="getTip(1)" class="tip tip-button button" value=10>  10&percnt; </button>
-            <button onclick="getTip(2)" class="tip tip-button button" value=15>  15&percnt; </button>
-            <button onclick="getTip(3)" class="tip tip-button button" value=25>  25&percnt; </button>
-            <button onclick="getTip(4)" class="tip tip-button button" value=50>  50&percnt; </button>
-            <input  onkeyup="getTip(5)" class="tip costum-tip" type="text" placeholder="Custom" onfocus="this.value=''">
+            <button onclick="readTip(0)" class="tip tip-button button" value=5 >  5&percnt;  </button>
+            <button onclick="readTip(1)" class="tip tip-button button" value=10>  10&percnt; </button>
+            <button onclick="readTip(2)" class="tip tip-button button" value=15>  15&percnt; </button>
+            <button onclick="readTip(3)" class="tip tip-button button" value=25>  25&percnt; </button>
+            <button onclick="readTip(4)" class="tip tip-button button" value=50>  50&percnt; </button>
+            <input  onkeyup="readTip(5)" class="tip costum-tip" type="text" placeholder="Custom" onfocus="this.value=''">
 
           </div>
         </div>
@@ -53,7 +48,7 @@
 
           <div class="input-row">
               <img class="input-logo" src="./images/icon-person.svg" alt="">
-              <input onkeyup="getSplit()" id="person-count" type="text" value="1" onfocus="this.value=''">
+              <input onkeyup="runUpdate()" id="person-count" type="text" value="1" onfocus="this.value=''">
           </div>
 
         </div>
@@ -82,62 +77,19 @@
             </div>
           </div>
         </div>
-        <button class="reset-button button">  Reset   </button>
+        <button onclick="resetValues()" class="reset-button button">  Reset   </button>
     </div>
 
   </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/DainiusMI">DainiusMI</a>.
+  <div class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/DainiusMI">DainiusMI</a>.
+    </div>
   </div>
 
-
-  <script>
-
-
-
-    var tipPerPerson = document.getElementById('tip-per-person');
-    var totalTip = document.getElementById('total-tip');
-
-
-
-
-        function getBill() {
-          let bill = parseFloat( document.getElementById('bill').value );
-          console.log(bill);
-        }
- 
-        function getSplit() {
-          let personCount = parseFloat( document.getElementById('person-count').value );
-          console.log(personCount);
-          if (personCount == 0) {
-            document.getElementById('error-people').style.display = 'flex';
-          }
-          else
-          document.getElementById('error-people').style.display = 'none';
-        }
-  
-        function getTip(x) {
-          let tipPercentList = document.getElementById('tip-percent-list');
-          let tipPercent = parseFloat( tipPercentList.getElementsByClassName('tip')[x].value );
-          console.log(tipPercent);
-
-        }
-        function updateCalc() {
-          totalTip = parseFloat( document.getElementById('bill').value) * tipPercent  / 100;
-        document.getElementById('total-tip').innerText = totalTip;
-
-        tipPerPerson = totalTip / parseFloat( document.getElementById('person-count').value );
-        document.getElementById('tip-per-person').innerText = tipPerPerson;
-        }
- 
-
-
- 
- 
-  </script>
+<script src="./index.js"></script>
 
 </body>
 </html>
