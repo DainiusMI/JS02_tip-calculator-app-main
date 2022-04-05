@@ -76,29 +76,23 @@ body {
             width: 100%;
             gap: .5rem;
             .input-row {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flexRow(center, space-between);
                 width: 100%;
+                height: 2.5rem;
 
                 input {
                     outline: none;
-                    max-width: 10rem;
+                    width: 80%;
                     background-color:$very-light-grayish-cyan;
                     color: $very-dark-cyan;
                     text-align: right;
                     font-size: 1rem;
-                    padding: .5rem;
-                    
                 }
 
             }
-
             .text-row {
                 width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+                @include flexRow(center, space-between);
                 .error-people {
                     display: none;
                     color: $error-color;
@@ -109,6 +103,10 @@ body {
                 display: grid;
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 gap: 1rem;
+                .focused {
+                    background-color: $strong-cyan;
+                    color: $very-dark-cyan;
+                }
             }
         }
         H3 {
@@ -124,7 +122,6 @@ body {
         .tip-button {
             background-color: $very-dark-cyan;
             color: $very-light-grayish-cyan;
-            &:focus,
             &:hover {
                 background-color: $strong-cyan;
                 color: $very-dark-cyan;
@@ -201,6 +198,10 @@ body {
     }
     .attribution { font-size: 11px ; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+}
+.focused {
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
 }
 
 

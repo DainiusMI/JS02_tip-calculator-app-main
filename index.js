@@ -3,6 +3,15 @@ function readTip(x) {
     //  getting what % to tip
     let tipPercentList = document.getElementById('tip-percent-list');
     window.tipPercent = parseFloat( tipPercentList.getElementsByClassName('tip')[x].value );
+    let focusThis = tipPercentList.getElementsByClassName('tip')[x];
+
+
+    for (i = 0; i < 4; i++) {
+      if (focusThis == tipPercentList.getElementsByClassName('tip')[i]) {
+        tipPercentList.getElementsByClassName('tip')[i].classList.add("focused");
+      }
+      else  tipPercentList.getElementsByClassName('tip')[i].classList.remove("focused");
+    }
     runUpdate();
 }
 

@@ -113,6 +113,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -120,16 +124,16 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  height: 2.5rem;
 }
 
 .info-container .row .input-row input {
   outline: none;
-  max-width: 10rem;
+  width: 80%;
   background-color: #f4fafa;
   color: #00494d;
   text-align: right;
   font-size: 1rem;
-  padding: .5rem;
 }
 
 .info-container .row .text-row {
@@ -137,6 +141,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -159,6 +167,11 @@ body {
   gap: 1rem;
 }
 
+.info-container .row .grid-tips .focused {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+
 .info-container H3 {
   color: #5e7a7d;
   font-size: 1rem;
@@ -177,7 +190,7 @@ body {
   color: #f4fafa;
 }
 
-.info-container .tip-button:focus, .info-container .tip-button:hover {
+.info-container .tip-button:hover {
   background-color: #26c0ab;
   color: #00494d;
 }
@@ -334,5 +347,10 @@ body {
 
 .calc-container .attribution a {
   color: #3e52a3;
+}
+
+.focused {
+  background-color: #26c0ab;
+  color: #00494d;
 }
 /*# sourceMappingURL=style.css.map */
